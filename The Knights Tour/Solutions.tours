@@ -1,0 +1,45 @@
+Tour: 1
+        5x5 starting (1,1)
+        25  6   17  12  23  
+        16  1   24  5   10  
+        7   18  11  22  13  
+        2   15  20  9   4   
+        19  8   3   14  21  
+
+Tour: 2
+        5x5 starting (0,0)
+        1   16  21  10  25  
+        20  11  24  15  22  
+        17  2   19  6   9   
+        12  7   4   23  14  
+        3   18  13  8   5   
+
+Tour: 3
+        5x5 starting (2,4)
+        23  10  15  4   25  
+        16  5   24  9   14  
+        11  22  3   18  1   
+        6   17  20  13  8   
+        21  12  7   2   19  
+
+Tour: 4
+        5x5 starting (3,4)
+        No solutions for this case.
+
+Tour: 5
+        3x3 starting (3,3)
+        No solutions for this case.
+
+Tour: 6
+        5x5 starting (4,5)
+        No solutions for this case.
+
+Tour: 7
+        6x6 starting (3,2)
+        36  25  34  19  22  11  
+        33  18  23  12  27  20  
+        24  35  26  21  10  5   
+        17  32  1   6   13  28  
+        2   7   30  15  4   9   
+        31  16  3   8   29  14  
+
