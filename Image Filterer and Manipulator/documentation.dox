@@ -1,0 +1,863 @@
+//////////////////////////////////////////////////////////////////////////
+//                                                                      //
+//                     "netPBM.h" Documentation                         //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+
+/** *********************************************************************
+* @typedef pixel
+* @brief the typedef 'pixel' that is an unsigned char.
+************************************************************************/
+
+/** *********************************************************************
+* @struct image
+* @brief Holds all the images data from the .ppm file.
+*
+* @var string image::magicNumber
+* @brief test
+* 
+* @var string image::comment
+* @brief Holds all the comments from the image file.
+*
+* @var int image::rows
+* @brief Amount of pixel rows in photo.
+*
+* @var int image::cols
+* @brief Amount of pixel columns in photo.
+*
+* @var pixel** image::redGray
+* @brief 2D Pixel array that holds all red/gray values.
+*
+* @var pixel** image::green
+* @brief 2D Pixel array that holds all green values.
+*
+* @var pixel** image::blue
+* @brief 2D Pixel array that holds all blue values.
+*
+************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//                                                                      //
+//                     "thpExam1.cpp" Documentation                     //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+
+
+/** ***************************************************************************
+* @mainpage thpExam1 - Image Manipulation
+*
+* @section sec1 Course Information:
+*
+* @author Jonah A Morgan
+*
+* @date 3 / 1 / 22
+*
+* @par Professor:
+* Roger Schrader
+*
+* @par Course:
+* CSC-215 "Programming Techniques"
+*
+* @par Assignment:
+* thpExam1
+*
+* @par Location:
+* Classroom Building - 329
+*
+* @section sec2 Program Information:
+* 
+* @details This program will take in Binary (P6) or Ascii (P3) files and read
+* the image values into a structure called 'image'. Every value after 255
+* is an RGB value that is stored in the correct dynamically allocated array.
+* 
+* The program will also allow you to apply an option to the image (see image
+* Operations.cpp for more in depth information). Rotations, Flips, and filters
+* are what you'll be able to apply as an option. Note: An option doesn't need
+* to be applied.
+* 
+* After the option is applied (or isn't), it will output the file in either P2
+* or P3 for Ascii, or either P5 or P6 for Binary (Based on if the image is
+* grayscaled or not).
+* 
+* Finally, the program will free up all dynamic memory and close down all files.
+*
+* @section sec3 Compiling and Usage:
+*
+* @par Usage:
+* @verbatim
+c:\>thpExam1.exe [option] --outputtype basename image.ppm
+
+Output Type
+      --ascii         integer text numbers will be written for the data
+      --binary        integer numbers will be written in binary form
+
+Option Code           Option Description
+      --flipX         Flip the image on the X axis
+      --flipY         Flip the image on the Y axis
+      --rotateCw      Rotate the image clockwise
+      --rotateCCW     Rotate the image counterclockwise
+      --grayscale     Convert the image to grayscale
+      --sepia         Antique a color image
+
+  @endverbatim
+* @par Compiling:
+*   None.
+*
+* @section tb_timeline_section Todo, Bugs, Timeline:
+*
+*
+*
+* @par Modifications and Development Timeline:
+* Visit gitlab commit log for timeline
+* <a href="https://gitlab.cse.sdsmt.edu/7503314/csc215s22programs/-/commits/master">
+* here.</a>
+******************************************************************************/
+
+
+/** **********************************************************************
+ * @fn int main(int argc, char** argv)
+ * @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  The main function of the program. First, it initializes all the variables
+ *  needed to run the program. It creates an image object. Then, it checks if
+ *  the arguments are valid. Checks if the image needs to be grayscaled. Then,
+ *  it opens the input image file and reads the header, comments, dimensions,
+ *  and pixel data to the three 2D pixel arrays allocated in the image object.
+ *  It has the ability to read P3 (Ascii) and P6 (Binary) image files.
+ * 
+ *  @par 
+ *  After obtaining all of the data. It will apply the correct option to the
+ *  image object. If there was no option specified, it won't apply any option.
+ *  Then it appends the correct image file extension and opens the output image
+ *  file if it exists. It will then output all of the data to the image file.
+ *  Finally, it will close all the files and free up the memory used by the
+ *  three 2D pixel arrays. 
+ * 
+ *
+ *  @param[in] argc the amount of arguments used to run the program.
+ *  @param[in] argv the 2D character array that contains the arguments.
+ *
+ *  @returns An int that will always be zero to show the program has stopped.
+ *
+ *  @par Example
+ *  @verbatim
+    See usage statement above.
+    @endverbatim
+ ************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//                                                                      //
+//                      "memory.cpp" Documentation                      //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+
+
+/** **********************************************************************
+ *  @fn pixel** alloc2d(int rows, int cols)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will allocate a 2D pixel array (unsigned char). Will throw out a memory
+ *  allocation error if the array wasn't able to be created. Returns the
+ *  created array.
+ *
+ *  @param[in] rows the amount of rows for the pixel array
+ *  @param[in] cols the amount of columns for the pixel array.
+ *
+ *  @returns ptr2d the 2D pixel (unsigned char) array.
+ *
+ *  @par Example
+ *  @verbatim
+
+    int r = 10;
+    int c = 20;
+
+    // Will create a 2D pixel array with 10 rows,and 20 columns. 
+    // Will exit the program and spit an error if the memory is unable
+    // to be allocated. 
+    ptr2d = alloc2d( r, c ); 
+
+    @endverbatim
+ *
+ *  
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void delete2d(pixel** &arr, int rows)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will free up the memory of the 2D pixel array by going through every
+ *  row and deleting that individual 1D pixel array. Then, at the end of the 
+ *  for loop it will delete the entire pixel array.
+ *
+ *  @param[in, out] arr the 2D array to be deleted
+ *  @param[in] rows the amount of rows for the pixel array.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+
+    int r = 10;
+    int c = 20;
+
+    ptr2d = alloc2d( r, c ); // Will create a 2D pixel array with 10 rows,
+                             // and 20 columns. Will exit the program
+                             // and spit an error if the memory is unable
+                             // to be allocated.
+
+    delete2d(ptr2d, r);      // Will delete the 2d array.
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void deleteAllArr(image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will take in an image and free up all the arrays contained within that 
+ *  image. It does this by calling the delete2d function for all the arrays
+ *  within the image.
+ *
+ *  @param[in, out] thisImage the image to have its arrays freed.
+ *
+ *  @par Example
+ *  @verbatim
+
+    image thisImage;
+
+    thisImage.rows = 20;
+    thisImage.cols = 30;
+
+    // Allocation of the arrays goes here.
+    allocateAllArr(thisImage);
+
+
+    // This will delete all the arrays within the image.
+    deleteAllArr(thisImage); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void allocateAllArr(image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will take in an image and allocate all the memory necessary for all the
+ *  arrays within the image by calling alloc2d three times.
+ *
+ *  @param[in, out] thisImage the image to have its arrays freed.
+ *
+ *  @par Example
+ *  @verbatim
+
+    image thisImage;
+
+    thisImage.rows = 20;
+    thisImage.cols = 30;
+
+    // This will allocate 3 2D pixel arrays with 20 rows and 30 columns.
+    allocateAllArr(thisImage);
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void closeEverything(ifstream& file, ofstream& fout, image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Closes the ifstream and ofstream objects. Calls deleteAllArr to free up
+ *  all the array memory in the image.
+ *
+ *  @param[in, out] file the ifstream that is being closed
+ *  @param[in, out] fout the ofstream that is being closed
+ *  @param[in, out] thisImage the image to have its arrays freed.
+ *  @par Example
+ *  @verbatim
+
+    image thisImage;
+
+    thisImage.rows = 20;
+    thisImage.cols = 30;
+
+    // This will allocate 3 2D pixel arrays with 20 rows and 30 columns.
+    allocateAllArr(thisImage);
+
+    ifstream file;
+    ifstream fout;
+
+    // Closes all files and frees up all memory.
+    closeEverything(file, fout, thisImage); 
+
+    @endverbatim
+ ************************************************************************/
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//                                                                      //
+//                   "imageFileIO.cpp" Documentation                    //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+
+
+ /** **********************************************************************
+ *  @fn void checkArgs(int argc, char** argv, string options[])
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Makes sure there are the right amount of arguments from the command line.
+ *  Checks to see if an option was selected.
+ *
+ *  @param[in] argc the amount of arguments given.
+ *  @param[in] argv the 2D character array.
+ *  @param[in] options the array of strings that define the options allowed.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+
+    //thpExam1.exe --binary basename test1 test2 
+    // ^^ is the input on the command line.
+
+    string options[6] = { "--flipX", "--flipY", "--rotateCW",
+                          "--rotateCCW", "--grayscale", "--sepia" };
+
+    // Will print the usage statement.
+    checkArgs(argc, argv, options); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void printUsageStatement()
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Prints the usage statement.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    // Will print the usage statement.
+    printUsageStatement();  
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn bool openInputFile(ifstream &file, string name)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will open the file from the ifstream. It does this by taking a file and
+ *  a string. It will then open the file if it exists. If the file is unable
+ *  to open. It will let the user know and exit the program.
+ *
+ *  @param[in, out] file the input stream to be opened.
+ *  @param[in] name the name of the file to be opened.
+ *
+ *  @returns A boolean result: True if the input stream opens, and
+ *  false if otherwise.
+ * 
+ *  @par Example
+ *  @verbatim
+ 
+    ifstream file;
+    string name = "z:\wowza.txt";
+
+    // Will return false if the file doesn't exist.
+    bool isItOpen = openInputFile(file, name); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *  @fn void readImageHCD(ifstream& file, image &thisImage, string tempStr)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will read in the header, the comments, and the dimensions of the image file.
+ *
+ *  @param[in, out] file the input stream to be read from.
+ *  @param[in, out] thisImage the structure to be read to.
+ *  @param[in] tempStr the temporary string used.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ifstream file;
+    string tempStr;
+    image thisImage;
+
+    // Will read in the data specified.
+    readImageHCD(file, thisImage, tempStr); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void readImageAscii(ifstream &file, image thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will read in the three 2D pixel arrays from the ".ppm" file.
+ *  It does this by using a nested for loop that will read every data
+ *  value into each of the 2D arrays.
+ *
+ *  @param[in, out] file the input stream to be read from.
+ *  @param[in, out] thisImage the structure to be read to.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ifstream file;
+    image thisImage;
+
+    // Will read in the 3 2D pixel arrays.
+    readImageAscii(file, thisImage); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void outputAscii(ofstream& fout, image thisImage, bool isGray)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will output the image structure contents to an output stream.
+ *  First, it will output the magic number from the image structure,
+ *  followed by all the comments. Followed by the width and the height.
+ *  Then uses a nested for loop to output every data value in the specified
+ *  arrays. If 'isGray' is true, it will only output the redGray array.
+ *
+ *  @param[in, out] fout the output stream to be written to.
+ *  @param[in] thisImage the structure to be written from.
+ *  @param[in] isGray the boolean that determines the filetype.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ofstream fout;
+    image thisImage;
+    bool isGray = false;
+
+    // Read in the image data before outputting it with the next function.
+    // Will output the image to the file.
+    outputAscii(fout, thisImage, isGray); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn bool openOutputFile(ofstream& fout, string name)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will open the file from the ofstream. It does this by taking a file and
+ *  a string. It will then open the file if it exists. If the file is unable
+ *  to open. It will let the user know and exit the program.
+ *
+ *  @param[in, out] fout the output stream to be opened.
+ *  @param[in] name the name of the file to be opened.
+ *
+ *  @returns A boolean result.  true if the output stream opens,
+ *  false otherwise.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ofstream fout;
+    string name = "z:\wowza.txt";
+    // Will return false if the file doesn't exist.
+    bool isItOpen = openOutputFile(fout, name); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void readImageBinary(ifstream& file, image thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will read in the three 2D pixel arrays from the ".ppm" file. Uses a nested
+ *  for loop that will read in all the data values for the arrays.
+ *
+ *  @param[in, out] file the input stream to be read from.
+ *  @param[in, out] thisImage the structure to be read to.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ifstream file;
+    image thisImage;
+
+    // Will read in the 3 2D pixel arrays.
+    readImageBinary(file, thisImage); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void outputBinary( ofstream& fout, image thisImage, bool isGray )
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Will output the image structure contents to an output stream as either
+ *  a P5 or P6 type. P5 if the image is grayscaled, and P6 if it isn't.
+ *  First, it will output the magic number, then the comments, then the
+ *  dimensions. Then will finally use a nested for loop to output all the data.
+ *  
+ *
+ *  @param[in, out] fout the output stream to be written to.
+ *  @param[in] thisImage the structure to be written from.
+ *  @param[in] isGray the boolean that determines the filetype.
+ *
+ *  @par Example
+ *  @verbatim
+    ofstream fout;
+    image thisImage;
+    bool isGray = false;
+
+    // Will output the image to the file
+    outputBinary(fout, thisImage, isGray); 
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void mainOutput( ofstream& fout, image thisImage, bool isGray, string type )
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Based on the string 'type', will use the output functions to
+ *  write the structure to the files. Has two main areas: Ascii and Binary.
+ *  If it's an ascii file, the magic number will be P3 (P2 if isGray is true).
+ *  If it's a binary file, the magic number will be P6 (P5 if isGray is true).
+ *
+ *
+ *  @param[in, out] fout the output stream to be read from.
+ *  @param[in] thisImage the structure to be read from.
+ *  @param[in] isGray the boolean that determines the filetype.
+ *  @param[in] type the string that tells us the type of file.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    ofstream fout;
+    image thisImage;
+    bool isGray = false;
+    string type = "--ascii";
+
+    // Will output the image to the file in a ascii format.
+    mainOutput(fout, thisImage, isGray, type); 
+
+    @endverbatim
+ ************************************************************************/
+
+
+ 
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//                                                                      //
+//                "imageOperations.cpp" Documentation                   //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+
+
+ /** **********************************************************************
+ * @fn void applyOption(image& thisImage, string option)
+ * @author Jonah A. Morgan
+ *  
+ *  @par Description
+ *  Takes in an image by reference and an option to apply to it. Then, based
+ *  on that string, it will apply that option to the image. If there was never
+ *  an option specified, it won't apply one.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *  @param[in] option The string which will determine which option to apply.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    image myImg;
+    string sepia = "--sepia";
+
+    applyOption(myImg, sepia); // Will change the color of the image to have
+                               // a yellowish tint.
+
+    @endverbatim
+ *
+ * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void flipImageX(image &thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and flips the image on it's X axis.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    image myImg;
+    
+    flipImageX(myImg); // Will flip the image on it's X axis.
+
+    @endverbatim
+
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void flipImageY(image &thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and flips the image on it's Y axis.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    image myImg;
+
+    flipImageY(myImg); // Will flip the image on it's Y axis.
+
+    @endverbatim
+ * 
+ * 
+ * 
+ *
+ *
+ *
+ *
+ *
+ *  @fn void rotateImageCW(image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and rotates the image clockwise 90 degrees.
+ *  It does this by creating three new 2D pixel arrays and allocates the 
+ *  original values correctly to make the new image appear like it rotated. 
+ *  It also deletes the three old arrays so it doesn't waste space.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    image myImg;
+    // Read myImg data in before calling the next function.
+    rotateImageCW(myImg); // Will rotate the image clockwise 90 degrees.
+
+    @endverbatim
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void rotateImageCCW(image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and rotates the image counterclockwise 
+ *  90 degrees.
+ *  It does this by creating three new 2D pixel arrays and allocates the
+ *  original values correctly to make the new image appear like it rotated.
+ *  It also deletes the three old arrays so it doesn't waste space.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *  @par Example
+ *  @verbatim
+ 
+    image myImg;
+    // Make sure the image data is read in before calling the next function.
+    rotateImageCCW(myImg); // Will rotate the image counter clockwise 90.
+
+    @endverbatim
+
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void grayscaleImage(image& thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and makes it into a black and white image.
+ *  It does this by taking in the original RBG values and using them recalculate
+ *  the values in the redGray array.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+  
+    image myImg;
+    // Make sure to read in the image data before applying function.
+    grayscaleImage(myImg); // Will make the Image black and white.
+
+    @endverbatim
+
+ * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *  @fn void sepiaImage(image &thisImage)
+ *  @author Jonah A. Morgan
+ *
+ *  @par Description
+ *  Takes in an image by reference and gives it a sepia filter. 
+ *  It does this by calculating new data values for each 2D array within
+ *  the image.
+ *
+ *  @param[in, out] thisImage The image for the option to be applied to.
+ *
+ *
+ *  @par Example
+ *  @verbatim
+
+    image myImg;
+    // Make sure to read in image data before applying this function.
+    sepiaImage(myImg); // Will make the image have a yellowish tint.
+
+    @endverbatim
+ ************************************************************************/
