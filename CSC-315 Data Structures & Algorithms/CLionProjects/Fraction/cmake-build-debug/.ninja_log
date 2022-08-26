@@ -1,0 +1,8 @@
+# ninja log v5
+3	352	6832428828215161	CMakeFiles/Fraction.dir/main.cpp.obj	d06970e824d4d796
+352	442	6832428829097346	Fraction.exe	8164916e72ab541
+1	146	6832587416707526	build.ninja	a5c97528ff52a87a
+9	312	6832419542296019	CMakeFiles/Fraction.dir/Fraction.cpp.obj	6abf8c1ee9684729
+4	367	6832587473630725	CMakeFiles/Fraction.dir/Fraction.cpp.obj	6cc59674af5e9750
+12	472	6832587474689478	CMakeFiles/Fraction.dir/main.cpp.obj	4bf978d56bbdbfa
+472	595	6832587475872847	Fraction.exe	8164916e72ab541
