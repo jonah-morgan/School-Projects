@@ -6,12 +6,12 @@ class Fraction {
 public:
     Fraction();
     Fraction(int n, int d = 1);
-    void display();
 
-    void add(Fraction rhs);
-    void subtract(Fraction rhs);
-    void multiply(Fraction rhs);
-    void divide(Fraction rhs);
+    std::string display();
+    Fraction operator+(Fraction rhs);
+    Fraction operator-(Fraction rhs);
+    Fraction operator*(Fraction rhs);
+    Fraction operator/(Fraction rhs);
 
 private:
     int numerator;

@@ -10,6 +10,7 @@
 				{
 					"includeDirectories" : 
 					[
+						"C:/Users/16059/scoop/apps/gcc/current/include",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/include",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed",
@@ -61,6 +62,7 @@
 				{
 					"includeDirectories" : 
 					[
+						"C:/Users/16059/scoop/apps/gcc/current/include",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 						"C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",

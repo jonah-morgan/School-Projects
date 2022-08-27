@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Fraction
+# Install script for directory: C:/Users/16059/Source/Repos/myGitHub/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Fraction
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Fraction/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/16059/Source/Repos/myGitHub/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Fraction/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

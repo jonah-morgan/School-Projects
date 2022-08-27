@@ -1,6 +1,7 @@
 #include "Fraction.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 Fraction::Fraction() {
@@ -15,32 +16,35 @@ Fraction::Fraction(int n, int d) {
 }
 
 
-void Fraction::display() {
-    std::cout << numerator << "/" << denominator;
+std::string Fraction::display() {
+    std::stringstream myStr;
+    myStr << numerator << "/" << denominator;
+    return myStr.str();
 }
 
 
-void Fraction::add(Fraction rhs) {
-    numerator = (numerator * rhs.denominator) + (denominator * rhs.numerator);
-    denominator = denominator * rhs.denominator;
+Fraction Fraction::operator+(Fraction rhs) {
+    int n = (numerator * rhs.denominator) + (denominator * rhs.numerator);
+    int d = denominator * rhs.denominator;
+    return Fraction(n, d);
 }
 
-
-void Fraction::subtract(Fraction rhs) {
-    numerator = (numerator * rhs.denominator) - (denominator * rhs.numerator);
-    denominator = denominator * rhs.denominator;
+Fraction Fraction::operator-(Fraction rhs) {
+    int n = (numerator * rhs.denominator) - (denominator * rhs.numerator);
+    int d = denominator * rhs.denominator;
+    return Fraction(n, d);
 }
 
-
-void Fraction::multiply(Fraction rhs) {
-    numerator = numerator * rhs.numerator;
-    denominator = denominator * rhs.denominator;
+Fraction Fraction::operator*(Fraction rhs) {
+    int n = numerator * rhs.numerator;
+    int d = denominator * rhs.denominator;
+    return Fraction(n, d);
 }
 
-
-void Fraction::divide(Fraction rhs) {
-    numerator = numerator * rhs.denominator;
-    denominator = denominator * rhs.numerator;
+Fraction Fraction::operator/(Fraction rhs) {
+    int n = numerator * rhs.denominator;
+    int d = denominator * rhs.numerator;
+    return Fraction(n, d);
 }
 
 
