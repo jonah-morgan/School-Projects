@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction"
+CMAKE_SOURCE_DIR = "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Fraction.dir/depend.make
@@ -71,30 +71,30 @@ include CMakeFiles/Fraction.dir/flags.make
 CMakeFiles/Fraction.dir/main.cpp.obj: CMakeFiles/Fraction.dir/flags.make
 CMakeFiles/Fraction.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Fraction.dir/main.cpp.obj: CMakeFiles/Fraction.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Fraction.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/main.cpp.obj -MF CMakeFiles\Fraction.dir\main.cpp.obj.d -o CMakeFiles\Fraction.dir\main.cpp.obj -c "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Fraction.dir/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/main.cpp.obj -MF CMakeFiles\Fraction.dir\main.cpp.obj.d -o CMakeFiles\Fraction.dir\main.cpp.obj -c "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp"
 
 CMakeFiles/Fraction.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fraction.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp" > CMakeFiles\Fraction.dir\main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp" > CMakeFiles\Fraction.dir\main.cpp.i
 
 CMakeFiles/Fraction.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fraction.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp" -o CMakeFiles\Fraction.dir\main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\main.cpp" -o CMakeFiles\Fraction.dir\main.cpp.s
 
 CMakeFiles/Fraction.dir/Fraction.cpp.obj: CMakeFiles/Fraction.dir/flags.make
 CMakeFiles/Fraction.dir/Fraction.cpp.obj: ../Fraction.cpp
 CMakeFiles/Fraction.dir/Fraction.cpp.obj: CMakeFiles/Fraction.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Fraction.dir/Fraction.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/Fraction.cpp.obj -MF CMakeFiles\Fraction.dir\Fraction.cpp.obj.d -o CMakeFiles\Fraction.dir\Fraction.cpp.obj -c "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Fraction.dir/Fraction.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/Fraction.cpp.obj -MF CMakeFiles\Fraction.dir\Fraction.cpp.obj.d -o CMakeFiles\Fraction.dir\Fraction.cpp.obj -c "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp"
 
 CMakeFiles/Fraction.dir/Fraction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fraction.dir/Fraction.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp" > CMakeFiles\Fraction.dir\Fraction.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp" > CMakeFiles\Fraction.dir\Fraction.cpp.i
 
 CMakeFiles/Fraction.dir/Fraction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fraction.dir/Fraction.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp" -o CMakeFiles\Fraction.dir\Fraction.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\Fraction.cpp" -o CMakeFiles\Fraction.dir\Fraction.cpp.s
 
 # Object files for target Fraction
 Fraction_OBJECTS = \
@@ -110,7 +110,7 @@ Fraction.exe: CMakeFiles/Fraction.dir/build.make
 Fraction.exe: CMakeFiles/Fraction.dir/linklibs.rsp
 Fraction.exe: CMakeFiles/Fraction.dir/objects1.rsp
 Fraction.exe: CMakeFiles/Fraction.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Fraction.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Fraction.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Fraction.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -122,6 +122,6 @@ CMakeFiles/Fraction.dir/clean:
 .PHONY : CMakeFiles/Fraction.dir/clean
 
 CMakeFiles/Fraction.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction" "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction" "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug" "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug" "C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles\Fraction.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction" "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction" "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug" "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug" "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Fraction\cmake-build-debug\CMakeFiles\Fraction.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Fraction.dir/depend
 

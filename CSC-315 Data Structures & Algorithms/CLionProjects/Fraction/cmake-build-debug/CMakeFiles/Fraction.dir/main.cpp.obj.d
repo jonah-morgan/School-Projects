@@ -1,5 +1,5 @@
 CMakeFiles/Fraction.dir/main.cpp.obj: \
- C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\main.cpp \
+ C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\main.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -132,7 +132,7 @@ CMakeFiles/Fraction.dir/main.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.h \
+ C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_uninitialized.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h \

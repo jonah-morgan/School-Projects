@@ -1,6 +1,6 @@
 CMakeFiles/Fraction.dir/Fraction.cpp.obj: \
- C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.cpp \
- C:\Users\16059\Source\Repos\myGitHub\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.h \
+ C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.cpp \
+ C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315\ Data\ Structures\ &\ Algorithms\CLionProjects\Fraction\Fraction.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
