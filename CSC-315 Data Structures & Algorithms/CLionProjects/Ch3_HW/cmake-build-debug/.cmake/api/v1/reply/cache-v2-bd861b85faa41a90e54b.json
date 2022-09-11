@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/7503314/CLionProjects/GCD/cmake-build-debug"
+			"value" : "c:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Ch3_HW/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/7503314/CLionProjects/GCD"
+			"value" : "C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Ch3_HW"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -635,7 +635,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/GCD"
+			"value" : "C:/Program Files (x86)/Ch3_HW"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -851,7 +851,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "GCD"
+			"value" : "Ch3_HW"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1230,7 +1230,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "GCD_BINARY_DIR",
+			"name" : "Ch3_HW_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1239,10 +1239,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/7503314/CLionProjects/GCD/cmake-build-debug"
+			"value" : "C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Ch3_HW/cmake-build-debug"
 		},
 		{
-			"name" : "GCD_IS_TOP_LEVEL",
+			"name" : "Ch3_HW_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1254,7 +1254,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "GCD_SOURCE_DIR",
+			"name" : "Ch3_HW_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/7503314/CLionProjects/GCD"
+			"value" : "C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Ch3_HW"
 		}
 	],
 	"kind" : "cache",

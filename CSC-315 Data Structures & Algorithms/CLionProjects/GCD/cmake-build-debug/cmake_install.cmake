@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/7503314/CLionProjects/GCD
+# Install script for directory: C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/GCD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/7503314/CLionProjects/GCD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/GCD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

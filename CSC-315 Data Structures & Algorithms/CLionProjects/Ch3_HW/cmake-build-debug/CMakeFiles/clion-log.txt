@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.1/bin/ninja/win/ninja.exe" -G Ninja -S "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Ch3_HW" -B "C:\Users\7503314\Source\Repos\github\School-Projects\CSC-315 Data Structures & Algorithms\CLionProjects\Ch3_HW\cmake-build-debug"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/7503314/Source/Repos/github/School-Projects/CSC-315 Data Structures & Algorithms/CLionProjects/Ch3_HW/cmake-build-debug
