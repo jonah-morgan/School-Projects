@@ -13,8 +13,7 @@ int main() {
     insert(headptr, 3);
     insert(headptr, 3);
     insert(headptr, -3);
-
-
+    remove(headptr, 4);
     std::cout << "Size: " << size(headptr) << std::endl;
     displaySet(headptr);
 

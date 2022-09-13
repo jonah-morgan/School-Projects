@@ -41,7 +41,32 @@ void insert(node* &headptr, int val){
 
 
 void remove(node* &headptr, int val){
+    // If the element provided isn't in the set.
+    if(!isMember(val, headptr) || size(headptr) == 0){
+        return;
+    }
 
+    // The case that the headptr contains the element to be removed.
+    if(headptr->value == val){
+        node* temp = headptr;
+        headptr = headptr->next;
+        delete temp;
+        return;
+    }
+
+    // The case that the headptr doesn't contain the element. We must traverse.
+    node* prev = headptr;
+    node* curr = headptr->next;
+
+    while(curr != nullptr && curr->value != val){
+        prev = curr;
+        curr = curr->next;
+    }
+
+    if(curr->value == val){
+        prev->next = curr->next;
+        delete curr;
+    }
 }
 
 
