@@ -1,6 +1,20 @@
 #include <iostream>
+#include "Set.h"
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    node* headptr;
+
+    insert(headptr, 0);
+    insert(headptr, 1);
+    insert(headptr, 4);
+    insert(headptr, 0);
+    insert(headptr, 1);
+    insert(headptr, 3);
+    insert(headptr, 3);
+    insert(headptr, -3);
+
+    displaySet(headptr);
+
     return 0;
 }
