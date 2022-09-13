@@ -20,6 +20,9 @@ int size(node* headptr);
 void displaySet(node* &headptr);
 bool isSubset(node* &headOne, node* &headTwo);
 bool isEqual(node* &headOne, node* &headTwo);
+bool isEmpty(node* &headptr);
+node* setUnion(node* &headOne, node* &headTwo);
+node* setIntersection(node* &headOne, node* &headTwo);
 
 
 // Functions with implementation.
@@ -137,6 +140,43 @@ bool isEqual(node* &headOne, node* &headTwo){
         return true;
     }
     return false;
+}
+
+
+bool isEmpty(node* &headptr){
+    if(size(headptr) == 0){
+        return true;
+    }
+    return false;
+}
+
+
+node* setUnion(node* &headOne, node* &headTwo){
+    node* newSet = nullptr;
+
+    node* temp = headOne;
+    while(temp != nullptr){
+        insert(newSet, temp->value);
+        temp = temp->next;
+    }
+
+    temp = headTwo;
+    while(temp != nullptr){
+        insert(newSet, temp->value);
+        temp = temp->next;
+    }
+
+    return newSet;
+}
+
+
+node* setIntersection(node* &headOne, node* &headTwo){
+    node* newSet = nullptr;
+
+    // If both sets are empty, then the intersection will be the empty set.
+    if (isEmpty(headOne) || isEmpty(headTwo)){
+        return newSet;
+    }
 }
 
 #endif //SET_SET_H
