@@ -177,6 +177,16 @@ node* setIntersection(node* &headOne, node* &headTwo){
     if (isEmpty(headOne) || isEmpty(headTwo)){
         return newSet;
     }
+
+    node* temp = headOne;
+    while(temp != nullptr){
+        if(isMember(temp->value,headTwo)){
+            insert(newSet, temp->value);
+        }
+        temp = temp->next;
+    }
+
+    return newSet;
 }
 
 #endif //SET_SET_H
