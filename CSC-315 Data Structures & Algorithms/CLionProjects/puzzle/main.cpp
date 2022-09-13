@@ -5,9 +5,9 @@
 using namespace std;
 using namespace std::chrono;
 
-int count = 0;
+long long int count = 0;
 
-int puzzle(long int N) {
+long long int puzzle(long long int N) {
     count++;
 
     if (N==1)
@@ -20,7 +20,7 @@ int puzzle(long int N) {
 
 int main() {
     long int N=0;
-    int answer;
+    long long int answer;
 
     do {
         count = -1;
@@ -56,12 +56,6 @@ int main() {
  *      puzzle function?
  *
  *      -
- *
- *
- *
- *
- *
- *
  *
  *
  *
