@@ -201,31 +201,88 @@ node* symDiff(node* &headOne, node* &headTwo){
 
 
 void displaySetFuncs(node* &headOne, node* &headTwo){
-    //UPDATE THIS!!!!!!!!!!!!!!!
+
     node* unionSet = setUnion(headOne, headTwo);
     node* intersectionSet = setIntersection(headOne, headTwo);
     node* differenceSet = setDifference(headOne, headTwo);
     node* symDiffSet = symDiff(headOne, headTwo);
 
-    std::cout << "Size: " << size(headOne) << std::endl;
+    std::cout << "A: ";
     displaySet(headOne);
-
-    std::cout << "\n";
-
-    std::cout << "Size: " << size(headTwo) << std::endl;
+    std::cout << "B: ";
     displaySet(headTwo);
 
-    std::cout << "\nIs s1 subset s2: " << isSubset(headOne, headTwo);
-    std::cout << "\nEquality: " << isEqual(headOne, headTwo);
+    if(isMember(5, headTwo)){
+        std::cout << "5 is a member of B\n";
+    }
+    else {
+        std::cout << "5 is not a member of B\n";
+    }
 
-    std::cout << "\n\nUnion: ";
+    if(isMember(11, headOne)){
+        std::cout << "11 is a member of A\n";
+    }
+    else {
+        std::cout << "11 is not a member of A\n";
+    }
+
+    std::cout << "Size of B is " << size(headTwo);
+
+    if(size(headOne) != size(headTwo)){
+        std::cout << "\nA and B are not the same size!\n";
+    }
+    else {
+        std::cout << "\nA and B are the same size!\n";
+    }
+
+    if(isSubset(headTwo, headOne)){
+        std::cout << "B is a subset of A\n";
+    }
+    else{
+        std::cout << "B is not a subset of A\n";
+    }
+
+    if(isEqual(headOne, headTwo)){
+        std::cout << "A and B are equal!\n";
+    }
+    else{
+        std::cout << "A and B are not equal!\n";
+    }
+
+    std::cout << "Union of A and B (A U B): ";
     displaySet(unionSet);
-    std::cout << "\nIntersection: ";
+
+    std::cout << "Intersection of A and B (A n B): ";
     displaySet(intersectionSet);
-    std::cout << "\nDifference: ";
+
+    std::cout << "Difference of A and B (A - B): ";
     displaySet(differenceSet);
-    std::cout << "\nSymDiff: ";
+
+    std::cout << "Symmetric Difference of A and B (A delta B): ";
     displaySet(symDiffSet);
+
+    std::cout << "(A-B) u B: ";
+    node* newUnion = setUnion(differenceSet, headTwo);
+    displaySet(newUnion);
+
+    if(isEqual(unionSet, newUnion)){
+        std::cout << "(A U B) and (A - B) U B are equal!\n";
+    }
+    else{
+        std::cout << "(A U B) and (A - B) U B are not equal!\n";
+    }
+
+    node* baDiff = setDifference(headTwo, headOne);
+    node* unionDiffs = setUnion(baDiff, differenceSet);
+    std::cout << "(A-B) U (B-A): ";
+    displaySet(unionDiffs);
+
+    if(isEqual(symDiffSet, unionDiffs)){
+        std::cout << "(A delta B) and (A-B) U (B-A) are equal!\n";
+    }
+    else {
+        std::cout << "(A delta B) and (A-B) U (B-A) are not equal!\n";
+    }
 }
 
 

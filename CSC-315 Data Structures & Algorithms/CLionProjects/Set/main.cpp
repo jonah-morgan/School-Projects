@@ -5,23 +5,17 @@
 int main() {
 
     node* setOne = nullptr;
-    insert(setOne, -5);
-    insert(setOne, 0);
-    insert(setOne, 1);
+    insert(setOne, 10);
+    insert(setOne, 34);
     insert(setOne, 4);
-    insert(setOne, 0);
-    insert(setOne, 2);
-    insert(setOne,4);
-    insert(setOne, 21);
-    insert(setOne, 10000);
+    insert(setOne, 7);
+    insert(setOne, 8);
 
     node* setTwo = nullptr;
-    insert(setTwo, 0);
-    insert(setTwo, 4);
-    insert(setTwo, 2);
-    insert(setTwo, 21);
-    insert(setTwo, 45);
-    insert(setTwo, 56);
+    insert(setTwo, 3);
+    insert(setTwo, 5);
+    insert(setTwo, 11);
+    insert(setTwo, 8);
 
     displaySetFuncs(setOne, setTwo);
     return 0;
