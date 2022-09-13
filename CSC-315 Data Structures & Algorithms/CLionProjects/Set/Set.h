@@ -20,10 +20,11 @@ int size(node* headptr);
 void displaySet(node* &headptr);
 bool isSubset(node* &headOne, node* &headTwo);
 bool isEqual(node* &headOne, node* &headTwo);
-bool isEmpty(node* &headptr);
 node* setUnion(node* &headOne, node* &headTwo);
 node* setIntersection(node* &headOne, node* &headTwo);
 node* setDifference(node* &headOne, node* &headTwo);
+node* symDiff(node* &headOne, node* &headTwo);
+void displaySetFuncs(node* &headOne, node* &headTwo);
 
 
 // Functions with implementation.
@@ -35,7 +36,7 @@ void insert(node* &headptr, int val){
 
     // Creation of the node.
     node* newNode = new (std::nothrow) node;
-    if(newNode == NULL){
+    if(newNode == nullptr){
         std::cout<<"Could not create the new node." << std::endl;
     }
 
@@ -123,7 +124,6 @@ bool isSubset(node* &headOne, node* &headTwo){
     }
 
     node* tempOne = headOne;
-    node* tempTwo = headTwo;
 
     while(tempOne != nullptr){
         if(!isMember(tempOne->value, headTwo)){
@@ -138,14 +138,6 @@ bool isSubset(node* &headOne, node* &headTwo){
 bool isEqual(node* &headOne, node* &headTwo){
     // Both sets must be a subset of one another to be equal
     if(isSubset(headOne, headTwo) && isSubset(headTwo, headOne)){
-        return true;
-    }
-    return false;
-}
-
-
-bool isEmpty(node* &headptr){
-    if(size(headptr) == 0){
         return true;
     }
     return false;
@@ -199,5 +191,42 @@ node* setDifference(node* &headOne, node* &headTwo){
 
     return newSet;
 }
+
+
+node* symDiff(node* &headOne, node* &headTwo){
+    node* setDiffOne  = setDifference(headOne,headTwo);
+    node* setDiffTwo  = setDifference(headTwo, headOne);
+    return setUnion(setDiffOne, setDiffTwo);
+}
+
+
+void displaySetFuncs(node* &headOne, node* &headTwo){
+    //UPDATE THIS!!!!!!!!!!!!!!!
+    node* unionSet = setUnion(headOne, headTwo);
+    node* intersectionSet = setIntersection(headOne, headTwo);
+    node* differenceSet = setDifference(headOne, headTwo);
+    node* symDiffSet = symDiff(headOne, headTwo);
+
+    std::cout << "Size: " << size(headOne) << std::endl;
+    displaySet(headOne);
+
+    std::cout << "\n";
+
+    std::cout << "Size: " << size(headTwo) << std::endl;
+    displaySet(headTwo);
+
+    std::cout << "\nIs s1 subset s2: " << isSubset(headOne, headTwo);
+    std::cout << "\nEquality: " << isEqual(headOne, headTwo);
+
+    std::cout << "\n\nUnion: ";
+    displaySet(unionSet);
+    std::cout << "\nIntersection: ";
+    displaySet(intersectionSet);
+    std::cout << "\nDifference: ";
+    displaySet(differenceSet);
+    std::cout << "\nSymDiff: ";
+    displaySet(symDiffSet);
+}
+
 
 #endif //SET_SET_H
