@@ -18,6 +18,7 @@ void remove(node* &headptr, int val);
 bool isMember(int val, node* &headptr);
 int size(node* headptr);
 void displaySet(node* &headptr);
+bool isSubset(node* &headOne, node* &headTwo);
 
 
 // Functions with implementation.
@@ -107,6 +108,25 @@ void displaySet(node* &headptr){
         }
     }
     std::cout << "}" << std::endl;
+}
+
+
+bool isSubset(node* &headOne, node* &headTwo){
+    // The empty set is always a subset.
+    if(headOne == nullptr){
+        return true;
+    }
+
+    node* tempOne = headOne;
+    node* tempTwo = headTwo;
+
+    while(tempOne != nullptr){
+        if(!isMember(tempOne->value, headTwo)){
+            return false;
+        }
+        tempOne = tempOne->next;
+    }
+    return true;
 }
 
 #endif //SET_SET_H

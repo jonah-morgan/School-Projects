@@ -3,19 +3,29 @@
 
 
 int main() {
-    node* headptr = NULL;
+    node* setOne = NULL;
 
-    insert(headptr, 235);
-    insert(headptr, 0);
-    insert(headptr, 1);
-    insert(headptr, 4);
-    insert(headptr, 1);
-    insert(headptr, 3);
-    insert(headptr, 3);
-    insert(headptr, -3);
-    remove(headptr, 4);
-    std::cout << "Size: " << size(headptr) << std::endl;
-    displaySet(headptr);
+//    insert(setOne, -5);
+//    insert(setOne, 0);
+//    insert(setOne, 1);
+    insert(setOne, 4);
+
+    node* setTwo = NULL;
+    insert(setTwo, 0);
+    insert(setTwo, 4);
+    insert(setTwo, 2);
+
+
+
+    std::cout << "Size: " << size(setOne) << std::endl;
+    displaySet(setOne);
+
+    std::cout << std::endl;
+
+    std::cout << "Size: " << size(setTwo) << std::endl;
+    displaySet(setTwo);
+
+    std::cout << "Is setone a subset of setTwo?: " << isSubset(setOne, setTwo);
 
     return 0;
 }
