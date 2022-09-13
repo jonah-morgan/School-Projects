@@ -9,6 +9,10 @@ int main() {
 //    insert(setOne, 0);
 //    insert(setOne, 1);
     insert(setOne, 4);
+    insert(setOne, 0);
+    insert(setOne, 2);
+    insert(setOne,4);
+    insert(setOne, 21);
 
     node* setTwo = NULL;
     insert(setTwo, 0);
@@ -25,7 +29,8 @@ int main() {
     std::cout << "Size: " << size(setTwo) << std::endl;
     displaySet(setTwo);
 
-    std::cout << "Is setone a subset of setTwo?: " << isSubset(setOne, setTwo);
+    std::cout << "Is s1 subset s2: " << isSubset(setOne, setTwo);
+    std::cout << "\nEquality: " << isEqual(setOne, setTwo);
 
     return 0;
 }

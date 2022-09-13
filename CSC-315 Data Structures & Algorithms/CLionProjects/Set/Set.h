@@ -19,6 +19,7 @@ bool isMember(int val, node* &headptr);
 int size(node* headptr);
 void displaySet(node* &headptr);
 bool isSubset(node* &headOne, node* &headTwo);
+bool isEqual(node* &headOne, node* &headTwo);
 
 
 // Functions with implementation.
@@ -127,6 +128,15 @@ bool isSubset(node* &headOne, node* &headTwo){
         tempOne = tempOne->next;
     }
     return true;
+}
+
+
+bool isEqual(node* &headOne, node* &headTwo){
+    // Both sets must be a subset of one another to be equal
+    if(isSubset(headOne, headTwo) && isSubset(headTwo, headOne)){
+        return true;
+    }
+    return false;
 }
 
 #endif //SET_SET_H
