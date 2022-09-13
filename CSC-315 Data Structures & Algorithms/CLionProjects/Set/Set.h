@@ -23,6 +23,7 @@ bool isEqual(node* &headOne, node* &headTwo);
 bool isEmpty(node* &headptr);
 node* setUnion(node* &headOne, node* &headTwo);
 node* setIntersection(node* &headOne, node* &headTwo);
+node* setDifference(node* &headOne, node* &headTwo);
 
 
 // Functions with implementation.
@@ -173,15 +174,25 @@ node* setUnion(node* &headOne, node* &headTwo){
 node* setIntersection(node* &headOne, node* &headTwo){
     node* newSet = nullptr;
 
-    // If both sets are empty, then the intersection will be the empty set.
-    if (isEmpty(headOne) || isEmpty(headTwo)){
-        return newSet;
-    }
-
     node* temp = headOne;
     while(temp != nullptr){
         if(isMember(temp->value,headTwo)){
             insert(newSet, temp->value);
+        }
+        temp = temp->next;
+    }
+
+    return newSet;
+}
+
+
+node* setDifference(node* &headOne, node* &headTwo){
+    node* newSet = nullptr;
+
+    node* temp = headOne;
+    while(temp != nullptr){
+        if(!isMember(temp->value, headTwo)){
+            insert(newSet,temp->value);
         }
         temp = temp->next;
     }

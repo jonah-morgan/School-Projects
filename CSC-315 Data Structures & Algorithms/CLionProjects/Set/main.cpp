@@ -24,6 +24,7 @@ int main() {
 
     node* unionSet = setUnion(setOne, setTwo);
     node* intersectionSet = setIntersection(setOne, setTwo);
+    node* differenceSet = setDifference(setOne, setTwo);
 
     std::cout << "Size: " << size(setOne) << std::endl;
     displaySet(setOne);
@@ -40,6 +41,8 @@ int main() {
     displaySet(unionSet);
     std::cout << "\nIntersection: ";
     displaySet(intersectionSet);
+    std::cout << "\nDifference: ";
+    displaySet(differenceSet);
 
     return 0;
 }
