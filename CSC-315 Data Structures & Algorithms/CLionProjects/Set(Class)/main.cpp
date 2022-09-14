@@ -3,16 +3,17 @@
 
 int main() {
     Set setOne = Set();
-    setOne.insert(11);
-    setOne.insert(2);
-    setOne.insert(5);
-    setOne.insert(1);
-    setOne.insert(5);
+    setOne.insert(10);
+    setOne.insert(34);
+    setOne.insert(4);
+    setOne.insert(7);
+    setOne.insert(8);
 
     Set setTwo = Set();
-    setTwo.insert(1);
-    setTwo.insert(2);
-    setTwo.insert(-44);
+    setTwo.insert(3);
+    setTwo.insert(5);
+    setTwo.insert(11);
+    setTwo.insert(8);
 
     displaySetFuncs(setOne, setTwo);
     return 0;

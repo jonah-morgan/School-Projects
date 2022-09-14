@@ -9,6 +9,7 @@
 class Set{
 public:
     Set();
+    ~Set();
     bool insert(int value);
     bool remove(int value);
     bool isMember(int value);
@@ -32,6 +33,15 @@ private:
 
 Set::Set() {
     headptr = nullptr;
+}
+
+
+Set::~Set(){
+    while(headptr != nullptr){
+        node* temp = headptr;
+        headptr = headptr->next;
+        delete temp;
+    }
 }
 
 
