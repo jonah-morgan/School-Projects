@@ -163,15 +163,15 @@ bool Set::isEqual(Set &rhs) {
 
 
 Set Set::Union(Set &rhs) {
-    Set newSet = Set();
+    Set newSet = Set();   //say newSet is k
 
-    node* temp = headptr;
+    node* temp = headptr; //n is this set
     while(temp != nullptr){
         newSet.insert(temp->value);
         temp = temp->next;
     }
 
-    temp = rhs.headptr;
+    temp = rhs.headptr;  //m is the right hand set
     while(temp != nullptr){
         newSet.insert(temp->value);
         temp = temp->next;
